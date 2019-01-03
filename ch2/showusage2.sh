@@ -3,7 +3,11 @@
 function show_usage
 {
 		echo "Usage: $0 source_dir dest_dir"
-		exit 1
+		if [ $# -eq 0 ]; then
+				exit 99
+		else
+				exit $1
+		fi
 }
 
 if [ $# -ne 2 ]; then
